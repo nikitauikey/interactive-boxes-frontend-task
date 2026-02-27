@@ -1,0 +1,351 @@
+ /* ─── Reset ──────────────────────────────────────────────── */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --pink:        #F05E7C;
+      --pink-light:  #fde8ed;
+      --pink-border: #F05E7C;
+      --gray-text:   #888888;
+      --dark-text:   #333333;
+      --strike:      #BBBBBB;
+      --bg:          #F9F9F9;
+      --white:       #FFFFFF;
+      --radius:      8px;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      min-height: 100vh;
+      padding: 30px 16px 40px;
+    }
+
+    /* ─── Widget Wrapper ─────────────────────────────────────── */
+    .widget {
+      background: var(--white);
+      width: 100%;
+      max-width: 420px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+      padding-bottom: 16px;
+    }
+
+    /* ─── Title ──────────────────────────────────────────────── */
+    .widget-title {
+      text-align: center;
+      padding: 20px 24px 16px;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--pink);
+      letter-spacing: 0.02em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .widget-title::before,
+    .widget-title::after {
+      content: '';
+      flex: 1;
+      height: 1.5px;
+      background: #DDDDDD;
+    }
+
+    /* ─── Plans Container ────────────────────────────────────── */
+    .plans {
+      padding: 0 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    /* ─── Plan Card ──────────────────────────────────────────── */
+    .plan-card {
+      border: 1.5px solid #E0E0E0;
+      border-radius: var(--radius);
+      padding: 14px 16px;
+      cursor: pointer;
+      position: relative;
+      transition: border-color 0.2s;
+      background: var(--white);
+    }
+
+    .plan-card.active {
+      border-color: var(--pink-border);
+      border-width: 2px;
+    }
+
+    /* Most Popular Badge */
+    .plan-card .popular-badge {
+      position: absolute;
+      top: -1px;
+      right: -1px;
+      background: var(--pink);
+      color: #fff;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 5px 10px;
+      border-radius: 0 var(--radius) 0 var(--radius);
+    }
+
+    /* ─── Plan Header Row ────────────────────────────────────── */
+    .plan-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .plan-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Radio Button */
+    .radio {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 2px solid #CCCCCC;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s;
+    }
+
+    .plan-card.active .radio {
+      border-color: var(--pink);
+    }
+
+    .radio::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--pink);
+      opacity: 0;
+      transform: scale(0);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .plan-card.active .radio::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    /* Plan Label */
+    .plan-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .plan-unit {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--dark-text);
+    }
+
+    .discount-tag {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--pink);
+      background: var(--pink-light);
+      border: 1px solid #F8B4C0;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    /* Plan Pricing */
+    .plan-pricing {
+      text-align: right;
+	  margin-top: 12px;
+    }
+
+    .plan-price {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--dark-text);
+      line-height: 1.2;
+    }
+
+    .plan-original {
+      font-size: 12px;
+      color: var(--strike);
+      text-decoration: line-through;
+      font-weight: 400;
+    }
+
+    /* Plan Sub-label */
+    .plan-sublabel {
+      font-size: 12px;
+      color: var(--gray-text);
+      margin-top: 2px;
+      padding-left: 30px;
+    }
+
+    /* ─── Variant Selector (shown when active) ───────────────── */
+    .variant-section {
+      display: grid;
+      grid-template-rows: 0fr;
+      transition: grid-template-rows 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
+
+    .plan-card.active .variant-section {
+      grid-template-rows: 1fr;
+    }
+
+    .variant-inner {
+      overflow: hidden;
+    }
+
+    .variant-content {
+      padding-top: 14px;
+    }
+
+    /* Column headers */
+    .variant-headers {
+      display: grid;
+      grid-template-columns: 28px 1fr 1fr;
+      gap: 8px;
+      padding: 0 0 4px;
+    }
+
+    .variant-col-label {
+      font-size: 12px;
+      color: var(--gray-text);
+      font-weight: 500;
+    }
+
+    .variant-col-label:first-child {
+      /* empty spacer for # column */
+    }
+
+    /* Variant Row */
+    .variant-row {
+      display: grid;
+      grid-template-columns: 28px 1fr 1fr;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .variant-row:last-child {
+      margin-bottom: 0;
+    }
+
+    .variant-num {
+      font-size: 12px;
+      color: var(--gray-text);
+      font-weight: 500;
+      text-align: center;
+    }
+
+    /* Select dropdowns */
+    .variant-select {
+      font-family: 'Poppins', sans-serif;
+      font-size: 12px;
+      color: var(--dark-text);
+      border: 1px solid #DDDDDD;
+      border-radius: 5px;
+      padding: 6px 22px 6px 10px;
+      appearance: none;
+      -webkit-appearance: none;
+      background: var(--white) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'%3E%3Cpath fill='%23888' d='M0 0l5 6 5-6z'/%3E%3C/svg%3E") no-repeat right 8px center;
+      background-size: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: border-color 0.2s;
+    }
+
+    .variant-select:focus {
+      outline: none;
+      border-color: var(--pink);
+    }
+
+    /* ─── Footer ─────────────────────────────────────────────── */
+    .widget-footer {
+      padding: 14px 14px 0;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2px 12px;
+    }
+
+    .free-delivery {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--pink);
+    }
+
+    .total-label {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--dark-text);
+    }
+
+    /* Add to Cart Button */
+    .add-to-cart {
+      width: 100%;
+      padding: 15px;
+      background: var(--pink);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius);
+      font-family: 'Poppins', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .add-to-cart:hover {
+      background: #e04a6a;
+    }
+
+    .add-to-cart:active {
+      transform: scale(0.98);
+    }
+
+    .add-to-cart .cart-icon {
+      font-size: 18px;
+      font-weight: 300;
+    }
+
+    /* Powered By */
+    .powered-by {
+      text-align: right;
+      padding: 10px 16px 0;
+      font-size: 11px;
+      color: #BBBBBB;
+      font-style: italic;
+    }
+
+    /* ─── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 480px) {
+      .widget {
+        border-radius: 0;
+        box-shadow: none;
+      }
+    }

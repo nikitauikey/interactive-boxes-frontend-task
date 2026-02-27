@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YAY! It's BOGO</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="widget">
+
+    <!-- Title -->
+    <div class="widget-title">YAY! It's BOGO</div>
+
+    <!-- Plans -->
+    <div class="plans">
+
+      <!-- 1 Unit -->
+      <div class="plan-card active" data-price="10.00" data-units="1">
+        <div class="plan-header">
+          <div class="plan-left">
+            <div class="radio"></div>
+            <div class="plan-label">
+              <span class="plan-unit">1 Unit</span>
+              <span class="discount-tag">10% Off</span>
+            </div>
+          </div>
+          <div class="plan-pricing">
+            <div class="plan-price">$10.00 USD</div>
+            <div class="plan-original">$24.00 USD</div>
+          </div>
+        </div>
+        <div class="plan-sublabel">Standard Price</div>
+
+        <!-- No variant selector for 1 unit -->
+      </div>
+
+      <!-- 2 Units (active by default in design) -->
+      <div class="plan-card" data-price="18.00" data-units="2">
+        <div class="popular-badge">MOST POPULAR</div>
+
+        <div class="plan-header">
+          <div class="plan-left">
+            <div class="radio"></div>
+            <div class="plan-label">
+              <span class="plan-unit">2 Unit</span>
+              <span class="discount-tag">20% Off</span>
+            </div>
+          </div>
+          <div class="plan-pricing">
+            <div class="plan-price">$18.00 USD</div>
+            <div class="plan-original">$24.00 USD</div>
+          </div>
+        </div>
+
+        <!-- Variant Selector -->
+        <div class="variant-section">
+          <div class="variant-inner">
+            <div class="variant-content">
+              <div class="variant-headers">
+                <div></div>
+                <div class="variant-col-label">Size</div>
+                <div class="variant-col-label">Colour</div>
+              </div>
+
+              <div class="variant-row">
+                <span class="variant-num">#1</span>
+                <select class="variant-select" aria-label="Item 1 Size">
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+                <select class="variant-select" aria-label="Item 1 Colour">
+                  <option value="Black">Black</option>
+                  <option value="White">White</option>
+                  <option value="Red">Red</option>
+                  <option value="Blue">Blue</option>
+                </select>
+              </div>
+
+              <div class="variant-row">
+                <span class="variant-num">#2</span>
+                <select class="variant-select" aria-label="Item 2 Size">
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+                <select class="variant-select" aria-label="Item 2 Colour">
+                  <option value="Colour" disabled selected>Colour</option>
+                  <option value="Black">Black</option>
+                  <option value="White">White</option>
+                  <option value="Red">Red</option>
+                  <option value="Blue">Blue</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3 Units -->
+      <div class="plan-card" data-price="24.00" data-units="3">
+        <div class="plan-header">
+          <div class="plan-left">
+            <div class="radio"></div>
+            <div class="plan-label">
+              <span class="plan-unit">3 Unit</span>
+              <span class="discount-tag">30% Off</span>
+            </div>
+          </div>
+          <div class="plan-pricing">
+            <div class="plan-price">$24.00 USD</div>
+            <div class="plan-original">$24.00 USD</div>
+          </div>
+        </div>
+        <!-- Variant Selector for 3 units -->
+        <div class="variant-section">
+          <div class="variant-inner">
+            <div class="variant-content">
+              <div class="variant-headers">
+                <div></div>
+                <div class="variant-col-label">Size</div>
+                <div class="variant-col-label">Colour</div>
+              </div>
+
+              <div class="variant-row">
+                <span class="variant-num">#1</span>
+                <select class="variant-select" aria-label="Item 1 Size">
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+                <select class="variant-select" aria-label="Item 1 Colour">
+                  <option value="Colour" disabled selected>Colour</option>
+                  <option value="Black">Black</option>
+                  <option value="White">White</option>
+                  <option value="Red">Red</option>
+                </select>
+              </div>
+
+              <div class="variant-row">
+                <span class="variant-num">#2</span>
+                <select class="variant-select" aria-label="Item 2 Size">
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+                <select class="variant-select" aria-label="Item 2 Colour">
+                  <option value="Colour" disabled selected>Colour</option>
+                  <option value="Black">Black</option>
+                  <option value="White">White</option>
+                  <option value="Red">Red</option>
+                </select>
+              </div>
+
+              <div class="variant-row">
+                <span class="variant-num">#3</span>
+                <select class="variant-select" aria-label="Item 3 Size">
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                </select>
+                <select class="variant-select" aria-label="Item 3 Colour">
+                  <option value="Colour" disabled selected>Colour</option>
+                  <option value="Black">Black</option>
+                  <option value="White">White</option>
+                  <option value="Red">Red</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="widget-footer">
+      <div class="footer-row">
+        <span class="free-delivery">Free Delivery</span>
+        <span class="total-label" id="total-display">Total : $10.00 USD</span>
+      </div>
+
+      <button class="add-to-cart" onclick="handleAddToCart()">
+        <span class="cart-icon">＋</span>
+        Add to Cart
+      </button>
+    </div>
+
+    <div class="powered-by">@ Powered by Me</div>
+
+  </div>
+
+ <script src="script.js"></script>
+
+</body>
+</html>
